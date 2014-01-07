@@ -1,0 +1,9 @@
+Gemfile.lock
+*.rbx
+*.rbc
+.yardoc/
+doc/
+measurements/
+coverage/
+profiling/
+tmp/
