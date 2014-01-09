@@ -2,6 +2,7 @@ Gemfile.lock
 *.rbx
 *.rbc
 .yardoc/
+.bundle/
 doc/
 measurements/
 coverage/
