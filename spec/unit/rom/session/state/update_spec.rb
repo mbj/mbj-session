@@ -4,12 +4,12 @@ describe ROM::Session::State, '#update' do
   subject { object.update(old_state) }
 
   let(:object)        { described_class.new(mapper, domain_object)              }
-  let(:mapper)        { mock('Mapper', :dumper => dumper)                       }
-  let(:dumper)        { mock('Dumper', :tuple  => tuple, :identity => identity) }
-  let(:identity)      { mock('Identity')                                        }
-  let(:tuple)         { mock('Tuple')                                           }
-  let(:domain_object) { mock('Domain Object')                                   }
-  let(:old_state)     { mock('Old State', :tuple => old_tuple)                  }
+  let(:mapper)        { double('Mapper', :dumper => dumper)                       }
+  let(:dumper)        { double('Dumper', :tuple  => tuple, :identity => identity) }
+  let(:identity)      { double('Identity')                                        }
+  let(:tuple)         { double('Tuple')                                           }
+  let(:domain_object) { double('Domain Object')                                   }
+  let(:old_state)     { double('Old State', :tuple => old_tuple)                  }
 
   context 'when tuple equals old tuple' do
     let(:old_tuple) { tuple }
@@ -17,7 +17,7 @@ describe ROM::Session::State, '#update' do
   end
 
   context 'when tuple not equals old tuple' do
-    let(:old_tuple) { mock('Old Tuple') }
+    let(:old_tuple) { double('Old Tuple') }
 
     let(:operand) do
       ROM::Session::Operand::Update.new(ROM::Session::State.new(mapper, domain_object), old_tuple)

@@ -4,9 +4,9 @@ describe ROM::Session::State::Loaded, '#identity' do
   subject { object.identity }
 
   let(:object) { described_class.new(loader) }
-  let(:identity)  { mock('Identity') }
+  let(:identity)  { double('Identity') }
   let(:loader) do
-    mock('Loader',
+    double('Loader',
       :identity => identity
     )
   end

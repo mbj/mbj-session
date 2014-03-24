@@ -33,9 +33,9 @@ describe ROM::Session, '#load' do
   end
 
   context 'when object is not loaded before' do
-    let(:early_object) { mock('Domain Object') }
+    let(:early_object) { double('Domain Object') }
     let(:early_loader) do
-      mock(
+      double(
         'Loader',
         :identity => identity,
         :object   => early_object,

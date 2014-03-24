@@ -5,13 +5,13 @@ describe ROM::Session::Operand::Update, '#old_tuple' do
 
   let(:object) { described_class.new(state, old_tuple) }
 
-  let(:identity)      { mock('Identity')      }
-  let(:domain_object) { mock('Domain Object') }
-  let(:tuple)         { mock('Tuple')         }
-  let(:old_tuple)     { mock('Old Tuple')     }
+  let(:identity)      { double('Identity')      }
+  let(:domain_object) { double('Domain Object') }
+  let(:tuple)         { double('Tuple')         }
+  let(:old_tuple)     { double('Old Tuple')     }
 
   let(:state) do
-    mock('State',
+    double('State',
       :tuple    => tuple,
       :object   => domain_object,
       :identity => identity

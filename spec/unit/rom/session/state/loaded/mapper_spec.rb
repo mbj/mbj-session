@@ -4,9 +4,9 @@ describe ROM::Session::State::Loaded, '#mapper' do
   subject { object.mapper }
 
   let(:object) { described_class.new(loader) }
-  let(:mapper)  { mock('Mapper') }
+  let(:mapper)  { double('Mapper') }
   let(:loader) do
-    mock('Loader',
+    double('Loader',
       :mapper => mapper
     )
   end

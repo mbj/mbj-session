@@ -4,10 +4,10 @@ describe ROM::Session::State::Loaded, '#object' do
   subject { object.object }
 
   let(:object) { described_class.new(loader) }
-  let(:domain_object)  { mock('Object') }
+  let(:domain_object)  { double('Object') }
 
   let(:loader) do
-    mock('Loader',
+    double('Loader',
       :object => domain_object
     )
   end

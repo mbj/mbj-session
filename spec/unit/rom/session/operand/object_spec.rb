@@ -5,12 +5,12 @@ describe ROM::Session::Operand, '#object' do
 
   let(:object) { described_class.new(state) }
 
-  let(:identity)      { mock('Identity')      }
-  let(:domain_object) { mock('Domain Object') }
-  let(:tuple)         { mock('Tuple')         }
+  let(:identity)      { double('Identity')      }
+  let(:domain_object) { double('Domain Object') }
+  let(:tuple)         { double('Tuple')         }
 
   let(:state) do
-    mock('State',
+    double('State',
       :tuple    => tuple,
       :object   => domain_object,
       :identity => identity

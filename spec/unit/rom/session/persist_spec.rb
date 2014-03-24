@@ -39,7 +39,7 @@ describe ROM::Session, '#persist' do
       end
 
       let(:state) do
-        mock('State', :object => domain_object, :identity => :a, :tuple => modified_tuple)
+        double('State', :object => domain_object, :identity => :a, :tuple => modified_tuple)
       end
 
       it 'should should update domain object' do
@@ -57,13 +57,13 @@ describe ROM::Session, '#persist' do
 
     end
 
-    # This is a differend test case than the attribute change. 
-    # We have to make sure we cache the loaded dump and compare this to 
+    # This is a differend test case than the attribute change.
+    # We have to make sure we cache the loaded dump and compare this to
     # future dumps without storing a dump of an object we just loaded.
     context 'and object is dirty from tuple generation change' do
 
       before do
-        new_dumper = mock('Dump', :identity => identity, :tuple => modified_tuple)
+        new_dumper = double('Dump', :identity => identity, :tuple => modified_tuple)
         mapper.stub(:dumper => new_dumper)
       end
 

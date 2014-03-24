@@ -4,9 +4,9 @@ describe ROM::Session::State::Loaded, '#tuple' do
   subject { object.tuple }
 
   let(:object) { described_class.new(loader) }
-  let(:tuple)  { mock('Tuple') }
+  let(:tuple)  { double('Tuple') }
   let(:loader) do
-    mock('Loader',
+    double('Loader',
       :tuple => tuple
     )
   end

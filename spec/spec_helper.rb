@@ -23,7 +23,7 @@ class Spec
 
     def tuple
       {
-        :key_attribute => @object.key_attribute, 
+        :key_attribute => @object.key_attribute,
         :other_attribute => @object.other_attribute
       }
     end
@@ -38,8 +38,8 @@ class Spec
   class Loader
     include Equalizer.new(:identity, :tuple)
 
-    attr_reader :mapper 
-    attr_reader :tuple 
+    attr_reader :mapper
+    attr_reader :tuple
 
     def initialize(mapper, tuple)
       @mapper, @tuple = mapper, tuple
@@ -47,7 +47,7 @@ class Spec
 
     def object
       @object ||= DomainObject.new(
-        tuple.fetch(:key_attribute), 
+        tuple.fetch(:key_attribute),
         tuple.fetch(:other_attribute)
       )
     end
@@ -99,7 +99,7 @@ class Spec
       Dumper.new(object)
     end
 
-    # Insert 
+    # Insert
     #
     # @param [State]
     #
@@ -111,7 +111,7 @@ class Spec
 
     # Delete
     #
-    # @param [STate] 
+    # @param [STate]
     #
     def delete(state)
       @deletes << state

@@ -5,16 +5,16 @@ describe ROM::Session::Reader, '#load' do
 
   let(:object) { described_class.new(session, mapper) }
 
-  let(:session)       { mock('Session', :load => domain_object) }
-  let(:mapper)        { mock('Mapper', :loader => loader)       }
-  let(:domain_object) { mock('Domain Object')                   }
-  let(:loader)        { mock('Loader')                          }
+  let(:session)       { double('Session', :load => domain_object) }
+  let(:mapper)        { double('Mapper', :loader => loader)       }
+  let(:domain_object) { double('Domain Object')                   }
+  let(:loader)        { double('Loader')                          }
 
-  let(:tuple) { mock('Tuple') }
+  let(:tuple) { double('Tuple') }
 
   # Fixme:
-  #   I do not like this message expectations on mocked objects 
-  #   Need to specify behavior and not implementation 
+  #   I do not like this message expectations on doubleed objects
+  #   Need to specify behavior and not implementation
   it 'should user loader from calling Mapper#loader(tuple)' do
     mapper.should_receive(:loader).with(tuple).and_return(loader)
     subject
