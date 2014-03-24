@@ -8,7 +8,7 @@ module ROM
 
     # @api private
     def self.new(registry, tracker = {})
-      super(registry, tracker)
+      super
     end
 
     # Return model specific reader
